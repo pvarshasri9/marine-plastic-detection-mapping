@@ -1,0 +1,15 @@
+{
+  "name": "marine-plastic-detection-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm run build:frontend && npm run start:backend",
+    "build:frontend": "npm --prefix frontend run build",
+    "start:backend": "cd backend && python -m uvicorn main:app --host 127.0.0.1 --port 8000",
+    "install:all": "npm install && npm --prefix frontend install",
+    "dev:vite": "concurrently --kill-others-on-fail --names \"FRONTEND,BACKEND\" --prefix-colors \"cyan,magenta\" \"npm --prefix frontend run dev\" \"npm run start:backend\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

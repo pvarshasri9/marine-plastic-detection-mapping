@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    @apply bg-navy-900 text-white font-sans;
+    margin: 0;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm;
+  }
+  /* glass-card is an alias for card with slightly different appearance */
+  .glass-card {
+    @apply bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm;
+  }
+  .btn-primary {
+    @apply bg-ocean-500 hover:bg-ocean-400 text-white font-semibold px-4 py-2 rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply bg-white/10 hover:bg-white/20 text-white font-medium px-4 py-2 rounded-lg transition-all duration-200 border border-white/10;
+  }
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-500 text-white font-medium px-4 py-2 rounded-lg transition-all duration-200;
+  }
+  .input {
+    @apply w-full bg-white/5 border border-white/20 rounded-lg px-4 py-2.5 text-white placeholder-white/40 focus:outline-none focus:border-ocean-400 focus:ring-1 focus:ring-ocean-400 transition-all;
+  }
+  .label {
+    @apply block text-sm font-medium text-white/70 mb-1.5;
+  }
+  .demo-badge {
+    @apply inline-flex items-center gap-1.5 bg-red-600/20 border border-red-500/50 text-red-400 text-xs font-bold px-3 py-1 rounded-full;
+  }
+  .ai-badge {
+    @apply inline-flex items-center gap-1.5 bg-green-600/20 border border-green-500/50 text-green-400 text-xs font-bold px-3 py-1 rounded-full;
+  }
+  .stat-card {
+    @apply card p-6 flex flex-col gap-2;
+  }
+}
